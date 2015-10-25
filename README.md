@@ -53,7 +53,7 @@ You should use this file to customize Travis CI's building behavior. After modif
 
 Note that for historical reasons `.travis.yml` needs to be present on all active branches of your project.
 
-## How to write `.travis.yml`
+## How to write `.travis.yml`?
 
 ### 1. Specifying Runtime Versions
 
@@ -65,16 +65,53 @@ node_js:
   - "Node"
 ```
 
-The above `.travis.yml` tells Travis CI that this project is built with Node newest version.
+The above `.travis.yml` tells Travis CI that this project should be built with the latest stable version of Node. (You also could use `stable` to replace `node`. They are synonym.)
 
-Official dos has a [list](http://docs.travis-ci.com/user/customizing-the-build/#Specifying-Runtime-Versions) of languages and runtimes Travis CI supports.
+Travis CI uses nvm to specify Node versions. Any version nvm could recognize can be used in `.travis.yml`.
 
-### 2. The Lifecycle
+```yaml
+language: node_js
+node_js:
+  - "4.1"
+  - "4.0"
+  - "0.12"
+  - "0.11"
+  - "0.10"
+  - "0.8"
+  - "0.6"
+  - "iojs"
+```
+
+This above code will make Travis CI run your tests against the latest version 0.6.x, 0.8.x, 0.10.x, 0.11.x, 0.12.x, 4.0.x, and 4.1.x branch releases, as well as the latest io.js stable release.
+
+Specifying only a major and minor version (e.g., “0.12”) will run using the latest published patch release for that version. If a specific version is not needed, It is encouraged to specify node to run using the latest stable releases.
+
+Official dos has a [list](http://docs.travis-ci.com/user/customizing-the-build/#Specifying-Runtime-Versions) of all languages and runtimes Travis CI supports.
+
+### 2. Default Building Behavior
 
 A build on Travis CI is made up of two steps:
 
 - install: install any dependencies required
 - script: run the build script
+
+By default, Travis CI will run
+
+```bash
+$ npm install
+```
+
+to install your dependencies.
+
+For projects using npm, Travis CI will execute
+
+```bash
+$ npm test
+```
+
+to run your test suite.
+
+### 3. The Lifecycle
 
 You can run custom commands before the installation step (`before_install`), and before (`before_script`) or after (`after_script`) the script step.
 
@@ -92,7 +129,7 @@ The complete build lifecycle is:
 1. OPTIONAL `deploy`
 1. OPTIONAL `after_deploy`
 
-### 3. Customizing the Installation Step
+### 4. Customizing the Installation Step
 
 Travis CI uses the default dependency installation commands depend on the project language to install the dependencies. For Node projects, the default dependency installation commands is `npm install`.
 
@@ -115,7 +152,7 @@ You can skip the installation step entirely by adding the following to your `.tr
 install: true
 ```
 
-### 4. Customizing the Build Step
+### 5. Customizing the Build Step
 
 The default build command depends on the project language. You can overwrite the default build step in .travis.yml:
 
@@ -144,13 +181,13 @@ If any of the commands in the first four stages of the build lifecycle return a 
 
 The `after_success`, `after_failure`, `after_script` and subsequent stages do not affect the the build result.
 
-### 5. Build Timeouts
+### 6. Build Timeouts
 
 Because it is very common for test suites or build scripts to hang, Travis CI has specific time limits for each job. If a script or test suite takes longer than 50 minutes (or 120 minutes on travis-ci.com), or if there is not log output for 10 minutes, it is terminated, and a message is written to the build log.
 
 There is no timeout for a build; a build will run as long as all the jobs do as long as each job does not timeout.
 
-### 6. Building Specific Branches
+### 7. Building Specific Branches
 
 Travis CI uses the `.travis.yml` file from the branch specified by the git commit that triggers the build.
 
@@ -183,7 +220,7 @@ branches:
 
 If you don’t want to run a build for a particular commit, because all you are changing is the README for example, add `[ci skip]` to the git commit message. Commits that have `[ci skip]` anywhere in the commit messages are ignored by Travis CI.
 
-### 7. Deploying your Code
+### 8. Deploying your Code
 
 An optional phase in the build lifecycle is deployment.
 
@@ -198,61 +235,7 @@ You can run steps before a deploy by using the `before_deploy` phase. A non-zero
 
 If there are any steps you’d like to run after the deployment, you can use the `after_deploy` phase.
 
-## Building Node Project
-
-### Provided Node.js Versions
-
-- 4.1.x (support provided on demand)
-- 4.0.x (support provided on demand)
-- 0.12.x (support provided on demand)
-- 0.11.x
-- 0.10.x (recent stable release)
-- 0.8.x
-- 0.6.x
-- iojs (recent stable release of io.js)
-
-Travis CI uses nvm to specify Node versions. Newer releases not shown above may be used if nvm recognizes them.
-
-```yaml
-language: node_js
-node_js:
-  - "4.1"
-  - "4.0"
-  - "0.12"
-  - "0.11"
-  - "0.10"
-  - "0.8"
-  - "0.6"
-  - "iojs"
-```
-
-This will make Travis CI run your tests against the latest version 0.6.x, 0.8.x, 0.10.x, 0.11.x, 0.12.x, 4.0.x, and 4.1.x branch releases, as well as the latest io.js stable release.
-
-Specifying `node` or `stable` will run using the latest stable Node.js release and specifying `iojs` will run using the latest stable io.js release.
-
-Specifying only a major and minor version (e.g., “0.12”) will run using the latest published patch release for that version. If a specific version is not needed, It is encouraged to specify `node` and/or `iojs` to run using the latest stable releases.
-
-### Dependency Management
-
-By default, Travis CI will run
-
-```bash
-$ npm install
-```
-
-to install your dependencies.
-
-### Default Test Script
-
-For projects using npm, Travis CI will execute
-
-```bash
-$ npm test
-```
-
-to run your test suite.
-
-## Links
+## Useful Links
 
 - [Building a Node.js project](http://docs.travis-ci.com/user/languages/javascript-with-nodejs/), by Travis CI
 - [Customizing the Build](http://docs.travis-ci.com/user/customizing-the-build/), by Travis CI
