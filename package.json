@@ -2,7 +2,7 @@
   "name": "travis-ci-demo",
   "version": "1.0.0",
   "scripts": {
-    "test": "jshint"
+    "test": "jshint hello.js"
   },
   "devDependencies": {
     "jshint": "^2.8.0"
