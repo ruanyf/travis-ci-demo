@@ -1,3 +1,5 @@
+This is a beginner tutorial of Travis CI for Node projects.
+
 ## What is Travis CI?
 
 [Travis CI](https://travis-ci.org/) is a hosted [continuous integration](https://en.wikipedia.org/wiki/Continuous_integration) platform that is free for all open source projects hosted on Github.
@@ -6,32 +8,48 @@ With a file called `.travis.yml`, you can trigger automated builds with every ch
 
 ## How to use Travis CI?
 
-1. Sign in to [Travis CI](https://travis-ci.org/auth) with your GitHub account.
+(1) Fork the repo ([howto](https://guides.github.com/activities/forking/)).
 
-1. Go to your [profile page](https://travis-ci.org/profile) and choose a repository to run Travis CI builds.
-
-1. Put a file called `.travis.yml`, which tells Travis CI what to do, in the root of your repository.
-
-1. Edit the empty `NewUser.txt` file by adding your name to the empty file. Add the file to git, commit and push, to trigger a Travis CI build.
+(2) Clone your fork into disk.
 
 ```bash
+$ git clone git@github.com:[your_username]/travis-ci-demo.git
+```
+
+(3) Sign in to [Travis CI](https://travis-ci.org/auth) with your GitHub account.
+
+(4) Go to [profile page](https://travis-ci.org/profile) and open the travis-ci-demo repository to run Travis CI builds.
+
+(5) Change into the travis-ci-demo directory, and switch into the `demo01` branch.
+
+```bash
+$ cd travis-ci-demo
+$ git checkout demo01
+```
+
+(6) Create an empty `NewUser.txt` file. Add the file to git, commit and push, to trigger a Travis CI build.
+
+```bash
+$ touch NewUser.txt
 $ git add -A
 $ git commit -m 'Testing Travis CI'
 $ git push
 ```
 
-1. Wait for Travis CI to run a build on your repository, check the [build status](https://travis-ci.org/repositories) and notice that the build fails. (Travis CI sends you an email when this happens)
+(7) Wait for Travis CI to run a build on your repository, check the [build status](https://travis-ci.org/repositories). (Travis CI sends an email to tell you the build result.)
+
+(8) Switch into other demo* branch, and repeat the step 6th and 7th.
 
 ## .travis.yml
 
-your .travis.yml file may tell Travis CI:
+A file called `.travis.yml` in the root of your repository tells Travis CI what to do.
 
 - What programming language your project uses
 - What commands or scripts you want to be executed before each build (for example, to install or clone your project’s dependencies)
 - What command is used to run your test suite
 - Emails, Campfire and IRC rooms to notify about build failures
 
-You can use [lint.travis-ci.org](http://lint.travis-ci.org/) to verify this file.
+You should use this file to customize Travis CI's building behavior. After modifing it, you can use [lint.travis-ci.org](http://lint.travis-ci.org/) to verify this file.
 
 Note that for historical reasons `.travis.yml` needs to be present on all active branches of your project.
 
