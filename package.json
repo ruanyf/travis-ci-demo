@@ -5,6 +5,8 @@
     "test": "jshint"
   },
   "devDependencies": {
-    "jshint": "^2.8.0"
+    "chai": "^3.4.0",
+    "jshint": "^2.8.0",
+    "mocha": "^2.3.3"
   }
 }
