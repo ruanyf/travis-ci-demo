@@ -38,36 +38,38 @@ $ git push
 
 (7) Wait for Travis CI to run a build on your repository, check the [build status](https://travis-ci.org/repositories). (Travis CI sends an email to tell you the build result.)
 
-(8) Switch into other demo* branch, and repeat the step 6th and 7th.
+(8) Switch into other demo* branches, and repeat the step 6th and 7th.
 
-## .travis.yml
+## What is `.travis.yml`?
 
 A file called `.travis.yml` in the root of your repository tells Travis CI what to do.
 
-- What programming language your project uses
-- What commands or scripts you want to be executed before each build (for example, to install or clone your project’s dependencies)
-- What command is used to run your test suite
-- Emails, Campfire and IRC rooms to notify about build failures
+> - What programming language your project uses
+> - What commands or scripts you want to be executed before each build (for example, to install or clone your project’s dependencies)
+> - What command is used to run your test suite
+> - Emails, Campfire and IRC rooms to notify about build failures
 
 You should use this file to customize Travis CI's building behavior. After modifing it, you can use [lint.travis-ci.org](http://lint.travis-ci.org/) to verify this file.
 
 Note that for historical reasons `.travis.yml` needs to be present on all active branches of your project.
 
-### Specifying Runtime Versions
+## How to write `.travis.yml`
 
-One of the key features of Travis CI is the ease of running your test suite against multiple runtimes and versions. Specify what languages and runtimes to run your test suite against in the `.travis.yml` file.
+### 1. Specifying Runtime Versions
 
-A [list](http://docs.travis-ci.com/user/customizing-the-build/#Specifying-Runtime-Versions) of languages and runtimes Travis CI supports.
+The first thing you should do is to specify what languages and runtimes to run your test suite against in the `.travis.yml` file.
 
 ```yaml
 language: node_js
 node_js:
-  - "4.1"
+  - "Node"
 ```
 
-The above `.travis.yml` tells Travis CI that this project is written in Node v4.1 .
+The above `.travis.yml` tells Travis CI that this project is built with Node newest version.
 
-### The Lifecycle
+Official dos has a [list](http://docs.travis-ci.com/user/customizing-the-build/#Specifying-Runtime-Versions) of languages and runtimes Travis CI supports.
+
+### 2. The Lifecycle
 
 A build on Travis CI is made up of two steps:
 
@@ -90,7 +92,7 @@ The complete build lifecycle is:
 1. OPTIONAL `deploy`
 1. OPTIONAL `after_deploy`
 
-### Customizing the Installation Step
+### 3. Customizing the Installation Step
 
 Travis CI uses the default dependency installation commands depend on the project language to install the dependencies. For Node projects, the default dependency installation commands is `npm install`.
 
@@ -113,7 +115,7 @@ You can skip the installation step entirely by adding the following to your `.tr
 install: true
 ```
 
-### Customizing the Build Step
+### 4. Customizing the Build Step
 
 The default build command depends on the project language. You can overwrite the default build step in .travis.yml:
 
@@ -142,13 +144,13 @@ If any of the commands in the first four stages of the build lifecycle return a 
 
 The `after_success`, `after_failure`, `after_script` and subsequent stages do not affect the the build result.
 
-### Build Timeouts
+### 5. Build Timeouts
 
 Because it is very common for test suites or build scripts to hang, Travis CI has specific time limits for each job. If a script or test suite takes longer than 50 minutes (or 120 minutes on travis-ci.com), or if there is not log output for 10 minutes, it is terminated, and a message is written to the build log.
 
 There is no timeout for a build; a build will run as long as all the jobs do as long as each job does not timeout.
 
-### Building Specific Branches
+### 6. Building Specific Branches
 
 Travis CI uses the `.travis.yml` file from the branch specified by the git commit that triggers the build.
 
@@ -181,7 +183,7 @@ branches:
 
 If you don’t want to run a build for a particular commit, because all you are changing is the README for example, add `[ci skip]` to the git commit message. Commits that have `[ci skip]` anywhere in the commit messages are ignored by Travis CI.
 
-### Deploying your Code
+### 7. Deploying your Code
 
 An optional phase in the build lifecycle is deployment.
 
