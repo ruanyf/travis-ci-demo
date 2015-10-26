@@ -43,9 +43,9 @@ $ git push
 
 ## Index
 
-- [Demo01](https://github.com/ruanyf/travis-ci-demo/tree/demo01): Linting (JShint)
-- [Demo02](https://github.com/ruanyf/travis-ci-demo/tree/demo02): Testing (Mocha)
-- [Demo03](https://github.com/ruanyf/travis-ci-demo/tree/demo03): Testing (Tape)
+- [Demo01: Linting (JShint)](https://github.com/ruanyf/travis-ci-demo/tree/demo01)
+- [Demo02: Testing (Mocha)](https://github.com/ruanyf/travis-ci-demo/tree/demo02)
+- [Demo03: Testing (Tape)](https://github.com/ruanyf/travis-ci-demo/tree/demo03)
 
 ---
 
