@@ -40,6 +40,15 @@ $ git push
 
 (8) Switch into other demo* branches, and repeat the step 6th and 7th.
 
+
+## Index
+
+- [Demo01](https://github.com/ruanyf/travis-ci-demo/tree/demo01): Linting (JShint)
+- [Demo02](https://github.com/ruanyf/travis-ci-demo/tree/demo02): Testing (Mocha)
+- [Demo03](https://github.com/ruanyf/travis-ci-demo/tree/demo03): Testing (Tape)
+
+---
+
 ## What is `.travis.yml`?
 
 A file called `.travis.yml` in the root of your repository tells Travis CI what to do.
