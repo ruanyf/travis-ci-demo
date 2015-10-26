@@ -90,6 +90,7 @@
 
     // Custom Globals
     "globals"       : {
-      "require": true
+      "require": true,
+      "test": true
     }        // additional predefined global variables
 }
