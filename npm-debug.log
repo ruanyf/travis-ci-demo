@@ -1,0 +1,46 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/nodejs',
+1 verbose cli   '/home/ruanyf/.node_modules/bin/npm',
+1 verbose cli   'run',
+1 verbose cli   'cover' ]
+2 info using npm@3.3.5
+3 info using node@v4.2.1
+4 verbose run-script [ 'precover', 'cover', 'postcover' ]
+5 info lifecycle travis-ci-demo@1.0.0~precover: travis-ci-demo@1.0.0
+6 silly lifecycle travis-ci-demo@1.0.0~precover: no script for precover, continuing
+7 info lifecycle travis-ci-demo@1.0.0~cover: travis-ci-demo@1.0.0
+8 verbose lifecycle travis-ci-demo@1.0.0~cover: unsafe-perm in lifecycle true
+9 verbose lifecycle travis-ci-demo@1.0.0~cover: PATH: /home/ruanyf/.node_modules/lib/node_modules/npm/bin/node-gyp-bin:/home/ruanyf/project/travis-ci-demo/node_modules/.bin:/home/ruanyf/.fzf/bin:/home/ruanyf/npm-global/bin:/home/ruanyf/.node_modules/bin:/home/ruanyf/npm/bin:/home/ruanyf/.node_modules/bin:/usr/local/bin:/usr/bin:/usr/sbin:/bin:/usr/local/games:/usr/games:/home/ruanyf/.cabal/bin:/home/ruanyf/tools/flow/:/home/ruanyf/bin
+10 verbose lifecycle travis-ci-demo@1.0.0~cover: CWD: /home/ruanyf/project/travis-ci-demo
+11 silly lifecycle travis-ci-demo@1.0.0~cover: Args: [ '-c',
+11 silly lifecycle   'node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec hello.test.js' ]
+12 silly lifecycle travis-ci-demo@1.0.0~cover: Returned: code: 1  signal: null
+13 info lifecycle travis-ci-demo@1.0.0~cover: Failed to exec cover script
+14 verbose stack Error: travis-ci-demo@1.0.0 cover: `node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec hello.test.js`
+14 verbose stack Exit status 1
+14 verbose stack     at EventEmitter.<anonymous> (/home/ruanyf/.node_modules/lib/node_modules/npm/lib/utils/lifecycle.js:233:16)
+14 verbose stack     at emitTwo (events.js:87:13)
+14 verbose stack     at EventEmitter.emit (events.js:172:7)
+14 verbose stack     at ChildProcess.<anonymous> (/home/ruanyf/.node_modules/lib/node_modules/npm/lib/utils/spawn.js:24:14)
+14 verbose stack     at emitTwo (events.js:87:13)
+14 verbose stack     at ChildProcess.emit (events.js:172:7)
+14 verbose stack     at maybeClose (internal/child_process.js:818:16)
+14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:211:5)
+15 verbose pkgid travis-ci-demo@1.0.0
+16 verbose cwd /home/ruanyf/project/travis-ci-demo
+17 error Linux 3.16.0-4-amd64
+18 error argv "/usr/bin/nodejs" "/home/ruanyf/.node_modules/bin/npm" "run" "cover"
+19 error node v4.2.1
+20 error npm  v3.3.5
+21 error code ELIFECYCLE
+22 error travis-ci-demo@1.0.0 cover: `node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec hello.test.js`
+22 error Exit status 1
+23 error Failed at the travis-ci-demo@1.0.0 cover script 'node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec hello.test.js'.
+23 error This is most likely a problem with the travis-ci-demo package,
+23 error not with npm itself.
+23 error Tell the author that this fails on your system:
+23 error     node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec hello.test.js
+23 error You can get their info via:
+23 error     npm owner ls travis-ci-demo
+23 error There is likely additional logging output above.
+24 verbose exit [ 1, true ]

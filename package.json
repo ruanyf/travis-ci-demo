@@ -3,10 +3,13 @@
   "version": "1.0.0",
   "scripts": {
     "lint": "jshint hello.js hello.test.js",
-    "test": "npm run lint && node ./hello.test.js"
+    "test": "npm run lint && node ./hello.test.js",
+    "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec hello.test.js"
   },
   "devDependencies": {
     "chai": "^3.4.0",
+    "coveralls": "^2.11.4",
+    "istanbul": "^0.4.0",
     "jshint": "^2.8.0",
     "mocha": "^2.3.3",
     "tape": "^4.2.2"
