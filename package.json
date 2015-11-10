@@ -4,7 +4,7 @@
   "scripts": {
     "lint": "jshint hello.js hello.test.js",
     "test": "npm run lint && node ./hello.test.js",
-    "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec hello.test.js"
+    "cover": "node_modules/istanbul/lib/cli.js cover node_modules/.bin/tape -- hello.test.js"
   },
   "devDependencies": {
     "chai": "^3.4.0",
