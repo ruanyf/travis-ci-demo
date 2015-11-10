@@ -1,12 +1,6 @@
 This is a beginner tutorial of Travis CI for Node projects.
 
-## What is Travis CI?
-
-[Travis CI](https://travis-ci.org/) is a hosted [continuous integration](https://en.wikipedia.org/wiki/Continuous_integration) platform that is free for all open source projects hosted on Github.
-
-With a file called `.travis.yml`, you can trigger automated builds with every change to your repo.
-
-## How to use Travis CI?
+## How to use
 
 (1) Fork the repo ([howto](https://guides.github.com/activities/forking/)).
 
@@ -40,7 +34,6 @@ $ git push
 
 (8) Switch into other demo* branches, and repeat the step 6th and 7th.
 
-
 ## Index
 
 - [Demo01: Linting (JShint)](https://github.com/ruanyf/travis-ci-demo/tree/demo01)
@@ -48,6 +41,12 @@ $ git push
 - [Demo03: Testing (Tape)](https://github.com/ruanyf/travis-ci-demo/tree/demo03)
 
 ---
+
+## What is Travis CI?
+
+[Travis CI](https://travis-ci.org/) is a hosted [continuous integration](https://en.wikipedia.org/wiki/Continuous_integration) platform that is free for all open source projects hosted on Github.
+
+With a file called `.travis.yml`, you can trigger automated builds with every change to your repo.
 
 ## What is `.travis.yml`?
 
