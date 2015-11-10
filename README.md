@@ -2,26 +2,28 @@ This is a beginner tutorial of Travis CI for Node projects.
 
 ## How to use
 
-(1) Fork the repo ([howto](https://guides.github.com/activities/forking/)).
+**Step 1**
 
-(2) Clone your fork into disk.
+Fork the repo (If you don't know what is fork, [click here](https://guides.github.com/activities/forking/)). Then, clone your fork into disk.
 
 ```bash
 $ git clone git@github.com:[your_username]/travis-ci-demo.git
 ```
 
-(3) Sign in to [Travis CI](https://travis-ci.org/auth) with your GitHub account.
+**Step 2**
 
-(4) Go to [profile page](https://travis-ci.org/profile) and open the travis-ci-demo repository to run Travis CI builds.
+Sign in to [Travis CI](https://travis-ci.org/auth) with your GitHub account. Go to [profile page](https://travis-ci.org/profile) and open the travis-ci-demo repository to run Travis CI builds.
 
-(5) Change into the travis-ci-demo directory, and switch into the `demo01` branch.
+**Step 3**
+
+Return to your termial window. Change into the travis-ci-demo directory, and switch into the `demo01` branch.
 
 ```bash
 $ cd travis-ci-demo
 $ git checkout demo01
 ```
 
-(6) Create an empty `NewUser.txt` file. Add the file to git, commit and push, to trigger a Travis CI build.
+Create an empty `NewUser.txt` file. Add the file to git, commit and push, to trigger a Travis CI build.
 
 ```bash
 $ touch NewUser.txt
@@ -30,9 +32,13 @@ $ git commit -m 'Testing Travis CI'
 $ git push
 ```
 
-(7) Wait for Travis CI to run a build on your repository, check the [build status](https://travis-ci.org/repositories). (Travis CI sends an email to tell you the build result.)
+**Step 4**
 
-(8) Switch into other demo* branches, and repeat the step 6th and 7th.
+Go to [Travis CI](https://travis-ci.org/). Wait for it to run a build on your repository, check the [build status](https://travis-ci.org/repositories). (Travis CI will sends an email to tell you the build result as well.)
+
+**Step 5**
+
+Switch into other demo* branches, and repeat the step 3rd and 4th.
 
 ## Index
 
@@ -40,6 +46,7 @@ $ git push
 - [Demo02: Testing (Mocha)](https://github.com/ruanyf/travis-ci-demo/tree/demo02)
 - [Demo03: Testing (Tape)](https://github.com/ruanyf/travis-ci-demo/tree/demo03)
 - [Demo04: After script(Coverall)](https://github.com/ruanyf/travis-ci-demo/tree/demo04)
+
 ---
 
 ## What is Travis CI?
