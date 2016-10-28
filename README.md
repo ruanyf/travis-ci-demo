@@ -45,7 +45,7 @@ Switch into other demo* branches, and repeat the step 3rd and 4th.
 - [Demo01: Linting (JShint)](https://github.com/ruanyf/travis-ci-demo/tree/demo01)
 - [Demo02: Testing (Mocha)](https://github.com/ruanyf/travis-ci-demo/tree/demo02)
 - [Demo03: Testing (Tape)](https://github.com/ruanyf/travis-ci-demo/tree/demo03)
-- [Demo04: After script(Coverall)](https://github.com/ruanyf/travis-ci-demo/tree/demo04)
+- [Demo04: After script (Coverall)](https://github.com/ruanyf/travis-ci-demo/tree/demo04)
 
 ---
 
