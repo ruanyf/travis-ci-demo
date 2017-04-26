@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/seven/travis-ci-demo.svg?branch=master)](https://travis-ci.org/seven/travis-ci-demo)
 ## What is Travis CI?
 
 [Travis CI](https://travis-ci.org/) is a hosted [continuous integration](https://en.wikipedia.org/wiki/Continuous_integration) platform that is free for all open source projects hosted on Github.
