@@ -10,3 +10,6 @@ script:
 
 # Send coverage data to Coveralls
 after_script: "cat coverage/lcov.info | node_modules/coveralls/bin/coveralls.js"
+
+service_name: travis-pro
+repo_token: HVE2VAq6cF6jcilRlPvAMPkn5j95MK4da
