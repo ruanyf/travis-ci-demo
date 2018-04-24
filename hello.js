@@ -4,4 +4,11 @@ function hello(){
   return 'Hello World';
 }
 
-module.exports = hello;
+function plus(a, b) {
+  return a + b;
+}
+
+module.exports = {
+  hello: hello,
+  plus: plus
+};
